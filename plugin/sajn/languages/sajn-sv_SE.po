@@ -1,0 +1,401 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sajn 0.1.0\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: sajn\n"
+
+
+#. Plugin Name of the plugin
+#. Author of the plugin
+#: sajn.php
+msgid "sajn"
+msgstr "sajn"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: sajn.php
+msgid "https://sajn.se"
+msgstr "https://sajn.se"
+
+#. Description of the plugin
+#: sajn.php
+msgid "Send a sajn document for signing when a visitor submits a form. Works with Contact Form 7 and WPForms."
+msgstr "Skicka ett sajn-dokument för signering när en besökare skickar ett formulär. Fungerar med Contact Form 7 och WPForms."
+
+#: includes/class-sajn-admin.php:24
+msgid "Connections"
+msgstr "Kopplingar"
+
+#: includes/class-sajn-admin.php:25
+#: includes/class-sajn-admin.php:30
+msgid "Settings"
+msgstr "Inställningar"
+
+#: includes/class-sajn-admin.php:26
+msgid "Log"
+msgstr "Logg"
+
+#: includes/class-sajn-admin.php:41
+msgid "sajn settings"
+msgstr "Inställningar för sajn"
+
+#. translators: %s: error message
+#: includes/class-sajn-admin.php:45
+#, php-format
+msgid "sajn rejected the API key: %s"
+msgstr "sajn godkände inte API-nyckeln: %s"
+
+#. translators: 1: workspace name, 2: organization name, 3: user email
+#: includes/class-sajn-admin.php:52
+#, php-format
+msgid "Connected to the workspace %1$s in %2$s as %3$s."
+msgstr "Ansluten till arbetsytan %1$s i %2$s som %3$s."
+
+#: includes/class-sajn-admin.php:67
+msgid "API key"
+msgstr "API-nyckel"
+
+#: includes/class-sajn-admin.php:69
+msgid "Saved. Enter a new key to replace it."
+msgstr "Sparad. Ange en ny nyckel för att byta."
+
+#: includes/class-sajn-admin.php:70
+msgid "In sajn, go to Settings → Organization → Developer → API keys and create a key. The plugin creates documents in the key's workspace. The public API is included from the Team plan."
+msgstr "Gå till Inställningar → Organisation → Utvecklare → API-nycklar i sajn och skapa en nyckel. Tillägget skapar dokument i nyckelns arbetsyta. API:et ingår från Team-planen."
+
+#: includes/class-sajn-admin.php:72
+msgid "Remove the saved key"
+msgstr "Ta bort den sparade nyckeln"
+
+#: includes/class-sajn-admin.php:78
+msgid "sajn address"
+msgstr "sajn-adress"
+
+#: includes/class-sajn-admin.php:79
+msgid "Set by SAJN_BASE_URL in wp-config.php."
+msgstr "Satt av SAJN_BASE_URL i wp-config.php."
+
+#: includes/class-sajn-admin.php:83
+msgid "Save settings"
+msgstr "Spara inställningar"
+
+#: includes/class-sajn-admin.php:118
+msgid "sajn connections"
+msgstr "Kopplingar till sajn"
+
+#: includes/class-sajn-admin.php:119
+#: includes/class-sajn-admin.php:172
+msgid "Add connection"
+msgstr "Lägg till koppling"
+
+#: includes/class-sajn-admin.php:123
+msgid "A connection sends a document from a sajn template for signing each time someone submits a form."
+msgstr "En koppling skickar ett dokument från en sajn-mall för signering varje gång någon skickar ett formulär."
+
+#: includes/class-sajn-admin.php:128
+#: includes/class-sajn-admin.php:190
+#: includes/class-sajn-admin.php:306
+msgid "Name"
+msgstr "Namn"
+
+#: includes/class-sajn-admin.php:129
+#: includes/class-sajn-admin.php:194
+msgid "Form"
+msgstr "Formulär"
+
+#: includes/class-sajn-admin.php:130
+msgid "Template"
+msgstr "Mall"
+
+#: includes/class-sajn-admin.php:131
+#: includes/class-sajn-admin.php:224
+msgid "Status"
+msgstr "Status"
+
+#: includes/class-sajn-admin.php:136
+msgid "No connections yet."
+msgstr "Inga kopplingar än."
+
+#: includes/class-sajn-admin.php:145
+msgid "(no name)"
+msgstr "(namnlös)"
+
+#: includes/class-sajn-admin.php:147
+msgid "Edit"
+msgstr "Redigera"
+
+#: includes/class-sajn-admin.php:148
+msgid "Delete this connection?"
+msgstr "Ta bort kopplingen?"
+
+#: includes/class-sajn-admin.php:148
+msgid "Delete"
+msgstr "Ta bort"
+
+#: includes/class-sajn-admin.php:153
+msgid "Active"
+msgstr "Aktiv"
+
+#: includes/class-sajn-admin.php:153
+msgid "Paused"
+msgstr "Pausad"
+
+#: includes/class-sajn-admin.php:172
+msgid "Edit connection"
+msgstr "Redigera koppling"
+
+#. translators: %s: error message
+#: includes/class-sajn-admin.php:176
+#, php-format
+msgid "Could not load templates from sajn: %s"
+msgstr "Kunde inte hämta mallar från sajn: %s"
+
+#: includes/class-sajn-admin.php:180
+msgid "Install and activate Contact Form 7 or WPForms to connect a form."
+msgstr "Installera och aktivera Contact Form 7 eller WPForms för att koppla ett formulär."
+
+#: includes/class-sajn-admin.php:197
+msgid "Select a form"
+msgstr "Välj formulär"
+
+#: includes/class-sajn-admin.php:210
+msgid "sajn template"
+msgstr "sajn-mall"
+
+#: includes/class-sajn-admin.php:213
+msgid "Select a template"
+msgstr "Välj mall"
+
+#: includes/class-sajn-admin.php:219
+msgid "Save to choose how the form fills in the template."
+msgstr "Spara för att välja hur formuläret fyller i mallen."
+
+#: includes/class-sajn-admin.php:225
+msgid "Send a document on every submission"
+msgstr "Skicka ett dokument vid varje inskickat formulär"
+
+#: includes/class-sajn-admin.php:233
+msgid "Save connection"
+msgstr "Spara koppling"
+
+#: includes/class-sajn-admin.php:233
+msgid "Continue"
+msgstr "Fortsätt"
+
+#. translators: %s: error message
+#: includes/class-sajn-admin.php:248
+#, php-format
+msgid "Could not load the template from sajn: %s"
+msgstr "Kunde inte hämta mallen från sajn: %s"
+
+#: includes/class-sajn-admin.php:254
+#: includes/class-sajn-admin.php:310
+msgid "Email"
+msgstr "E-post"
+
+#: includes/class-sajn-admin.php:255
+msgid "SMS"
+msgstr "SMS"
+
+#: includes/class-sajn-admin.php:256
+msgid "Email and SMS"
+msgstr "E-post och SMS"
+
+#: includes/class-sajn-admin.php:257
+msgid "No invitation"
+msgstr "Ingen inbjudan"
+
+#: includes/class-sajn-admin.php:260
+msgid "Form fields"
+msgstr "Formulärfält"
+
+#: includes/class-sajn-admin.php:261
+msgid "Use a form field in any box below by writing its tag. You can mix tags and text, such as \"Agreement for {your-name}\"."
+msgstr "Använd ett formulärfält i rutorna nedan genom att skriva dess tagg. Du kan blanda taggar och text, till exempel \"Avtal för {your-name}\"."
+
+#: includes/class-sajn-admin.php:263
+msgid "Tag"
+msgstr "Tagg"
+
+#: includes/class-sajn-admin.php:263
+msgid "Field"
+msgstr "Fält"
+
+#: includes/class-sajn-admin.php:271
+#: includes/class-sajn-admin.php:445
+msgid "Document"
+msgstr "Dokument"
+
+#: includes/class-sajn-admin.php:274
+msgid "Document name"
+msgstr "Dokumentnamn"
+
+#: includes/class-sajn-admin.php:277
+msgid "Leave empty to use the template name."
+msgstr "Lämna tomt för att använda mallens namn."
+
+#: includes/class-sajn-admin.php:282
+msgid "Parties"
+msgstr "Parter"
+
+#: includes/class-sajn-admin.php:284
+msgid "The template has no parties. Add them to the template in sajn."
+msgstr "Mallen har inga parter. Lägg till dem i mallen i sajn."
+
+#: includes/class-sajn-admin.php:286
+msgid "A party you leave empty keeps the details saved in the template."
+msgstr "En part du lämnar tom behåller uppgifterna från mallen."
+
+#: includes/class-sajn-admin.php:314
+msgid "Phone"
+msgstr "Telefon"
+
+#: includes/class-sajn-admin.php:316
+msgid "Needed for SMS, with country code, such as +46701234567."
+msgstr "Krävs för SMS, med landskod, till exempel +46701234567."
+
+#: includes/class-sajn-admin.php:319
+msgid "Invitation"
+msgstr "Inbjudan"
+
+#: includes/class-sajn-admin.php:329
+msgid "Signature method"
+msgstr "Signeringsmetod"
+
+#: includes/class-sajn-admin.php:332
+msgid "As in the template"
+msgstr "Som i mallen"
+
+#: includes/class-sajn-admin.php:342
+msgid "Fields to fill in"
+msgstr "Fält att fylla i"
+
+#: includes/class-sajn-admin.php:351
+msgid "Other keys"
+msgstr "Andra nycklar"
+
+#: includes/class-sajn-admin.php:354
+msgid "One key per line, such as \"org-number = {org-nr}\". Use this for keys the list above doesn't show, such as form fields in an uploaded PDF."
+msgstr "En nyckel per rad, till exempel \"org-number = {org-nr}\". Använd det för nycklar som listan ovan inte visar, till exempel formulärfält i en uppladdad PDF."
+
+#: includes/class-sajn-admin.php:359
+msgid "After the submission"
+msgstr "Efter inskickat formulär"
+
+#: includes/class-sajn-admin.php:362
+msgid "Open signing"
+msgstr "Öppna signering"
+
+#: includes/class-sajn-admin.php:365
+msgid "No, show the form's own confirmation"
+msgstr "Nej, visa formulärets egen bekräftelse"
+
+#. translators: %s: party name
+#: includes/class-sajn-admin.php:367
+#, php-format
+msgid "Yes, for %s"
+msgstr "Ja, för %s"
+
+#: includes/class-sajn-admin.php:370
+msgid "Sends the visitor straight to the document to sign it. Choose the party who fills in the form."
+msgstr "Skickar besökaren direkt till dokumentet för att signera. Välj parten som fyller i formuläret."
+
+#: includes/class-sajn-admin.php:436
+msgid "sajn log"
+msgstr "Logg för sajn"
+
+#: includes/class-sajn-admin.php:437
+msgid "The last 50 submissions that a connection handled."
+msgstr "De senaste 50 formulär som en koppling hanterade."
+
+#: includes/class-sajn-admin.php:441
+msgid "Time"
+msgstr "Tid"
+
+#: includes/class-sajn-admin.php:442
+msgid "Connection"
+msgstr "Koppling"
+
+#: includes/class-sajn-admin.php:443
+msgid "Result"
+msgstr "Resultat"
+
+#: includes/class-sajn-admin.php:444
+msgid "Message"
+msgstr "Meddelande"
+
+#: includes/class-sajn-admin.php:450
+msgid "Nothing yet."
+msgstr "Inget än."
+
+#: includes/class-sajn-admin.php:456
+msgid "Sent"
+msgstr "Skickat"
+
+#: includes/class-sajn-admin.php:456
+msgid "Failed"
+msgstr "Misslyckades"
+
+#: includes/class-sajn-admin.php:494
+msgid "(form plugin inactive)"
+msgstr "(formulärtillägget är inaktivt)"
+
+#: includes/class-sajn-admin.php:497
+msgid "(deleted form)"
+msgstr "(borttaget formulär)"
+
+#: includes/class-sajn-admin.php:502
+msgid "signer"
+msgstr "signerar"
+
+#: includes/class-sajn-admin.php:503
+msgid "reviewer"
+msgstr "granskar"
+
+#: includes/class-sajn-admin.php:504
+msgid "organizer"
+msgstr "organisatör"
+
+#. translators: %s: URL of the settings page
+#: includes/class-sajn-admin.php:516
+#, php-format
+msgid "Add your sajn API key under <a href=\"%s\">sajn → Settings</a> first."
+msgstr "Lägg först till din sajn-API-nyckel under <a href=\"%s\">sajn → Inställningar</a>."
+
+#: includes/class-sajn-admin.php:527
+msgid "Settings saved."
+msgstr "Inställningarna är sparade."
+
+#: includes/class-sajn-admin.php:528
+msgid "Connection saved."
+msgstr "Kopplingen är sparad."
+
+#: includes/class-sajn-admin.php:529
+msgid "Connection deleted."
+msgstr "Kopplingen är borttagen."
+
+#: includes/class-sajn-admin.php:538
+msgid "You are not allowed to change sajn settings."
+msgstr "Du har inte behörighet att ändra inställningarna för sajn."
+
+#: includes/class-sajn-api.php:37
+msgid "No sajn API key is saved."
+msgstr "Ingen API-nyckel för sajn är sparad."
+
+#. translators: %d: HTTP status code
+#: includes/class-sajn-api.php:189
+#, php-format
+msgid "sajn returned HTTP %d."
+msgstr "sajn svarade med HTTP %d."
+
+#: includes/class-sajn-connections.php:191
+msgid "Document sent for signing."
+msgstr "Dokumentet skickades för signering."
+
+#: includes/class-sajn-connections.php:209
+msgid "The document was sent, but the party to open signing for has no name, email, or phone in this submission."
+msgstr "Dokumentet skickades, men parten som signeringen skulle öppnas för saknar namn, e-post och telefon i det här formuläret."
