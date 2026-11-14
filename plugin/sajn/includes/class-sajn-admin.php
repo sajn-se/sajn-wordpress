@@ -89,6 +89,7 @@ final class Sajn_Admin {
 	public static function save_settings() {
 		self::authorize( 'sajn_save_settings' );
 
+		// phpcs:disable WordPress.Security.NonceVerification.Missing -- Checked in authorize().
 		$settings = get_option( Sajn_Api::SETTINGS_KEY, array() );
 		$api_key  = isset( $_POST['api_key'] ) ? trim( sanitize_text_field( wp_unslash( $_POST['api_key'] ) ) ) : '';
 
@@ -97,6 +98,7 @@ final class Sajn_Admin {
 		} elseif ( '' !== $api_key ) {
 			$settings['api_key'] = $api_key;
 		}
+		// phpcs:enable
 
 		update_option( Sajn_Api::SETTINGS_KEY, $settings, false );
 		self::redirect( 'admin.php?page=sajn-settings', 'settings_saved' );
@@ -177,7 +179,7 @@ final class Sajn_Admin {
 				<?php $templates = array(); ?>
 			<?php endif; ?>
 			<?php if ( ! Sajn_Sources::all() ) : ?>
-				<div class="notice notice-warning"><p><?php esc_html_e( 'Install and activate Contact Form 7 or WPForms to connect a form.', 'sajn' ); ?></p></div>
+				<div class="notice notice-warning"><p><?php esc_html_e( 'Install and activate Contact Form 7, WPForms, or Gravity Forms to connect a form.', 'sajn' ); ?></p></div>
 			<?php endif; ?>
 
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
@@ -421,6 +423,7 @@ final class Sajn_Admin {
 	}
 
 	public static function delete_connection() {
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- The id names the nonce that authorize() checks.
 		$id = isset( $_GET['id'] ) ? sanitize_text_field( wp_unslash( $_GET['id'] ) ) : '';
 		self::authorize( 'sajn_delete_connection_' . $id );
 

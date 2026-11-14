@@ -1,8 +1,8 @@
-=== sajn ===
+=== sajn E-Signature ===
 Contributors: sajn
-Tags: e-signature, bankid, contact form 7, wpforms, contracts
+Tags: e-signature, bankid, contact form 7, wpforms, gravity forms
 Requires at least: 6.2
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 0.1.0
 License: GPLv2 or later
@@ -12,7 +12,7 @@ Send a sajn document for signing when a visitor submits a form.
 
 == Description ==
 
-Connect a Contact Form 7 or WPForms form to a sajn template. Each time someone submits the form, sajn creates a document from the template, fills it in with the answers, and sends it for signing. The visitor can go straight to the signing page.
+Connect a Contact Form 7, WPForms, or Gravity Forms form to a sajn template. Each time someone submits the form, sajn creates a document from the template, fills it in with the answers, and sends it for signing. The visitor can go straight to the signing page.
 
 * Fill in the template's parties and fields with form tags, such as `{your-name}`.
 * Choose the invitation channel and the signature method per party: BankID, MitID, drawn, click to sign, and more.
@@ -34,4 +34,4 @@ The plugin sends form answers to sajn (https://sajn.se) to create and send the d
 == Changelog ==
 
 = 0.1.0 =
-* First version: Contact Form 7 and WPForms connections.
+* First version: Contact Form 7, WPForms, and Gravity Forms connections.

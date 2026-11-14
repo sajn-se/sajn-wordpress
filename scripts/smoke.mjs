@@ -10,7 +10,9 @@ const WP_URL = process.env.WP_URL ?? 'http://localhost:8088';
 const SAJN_APP_URL = process.env.SAJN_APP_URL ?? 'http://localhost:3000';
 const API_KEY = process.env.SAJN_API_KEY ?? readFileSync(`${homedir()}/.sajn-wp-dev/api-key`, 'utf8').trim();
 const TEMPLATE_NAME = process.env.SAJN_TEMPLATE ?? 'WP Offertförfrågan';
-const SIGNER_EMAIL = process.env.SIGNER_EMAIL ?? 'andreas@sajn.se';
+// sajn emails the signer once its worker runs, so use an address you own.
+const SIGNER_EMAIL = process.env.SIGNER_EMAIL;
+if (!SIGNER_EMAIL) throw new Error('Set SIGNER_EMAIL to an address you own.');
 const SHOTS = new URL('../screenshots/', import.meta.url).pathname;
 
 mkdirSync(SHOTS, { recursive: true });

@@ -1,28 +1,38 @@
 # sajn for WordPress
 
-A WordPress plugin that sends a sajn document for signing when a visitor submits a form. It works with Contact Form 7 and WPForms. The plugin lives in `plugin/sajn/`. Everything else in this repo is the local test setup.
+A WordPress plugin that sends a sajn document for signing when a visitor submits a form. It works with Contact Form 7, WPForms (1.9.8.6 or later), and Gravity Forms.
 
-## How the plugin works
+## Install the plugin
 
-An admin saves an API key under **sajn → Settings** and adds a connection under **sajn → Connections**. A connection names a form, a sajn template, and how the form fills in the template:
+You need a sajn organization on the Team plan or higher.
 
-- Each template party gets a name, an email, and a phone, written as form tags such as `{your-name}`. A party left empty keeps the details saved in the template.
-- Each sender-filled key in the template gets a value. The keys come from FORM subfields and boxes placed on a PDF. Keys the lookup misses go in **Other keys**, one `key = {tag}` per line.
-- **Open signing** sends the visitor straight to the signing page of one party.
+1. Download `sajn.zip` from the [latest release](https://github.com/sajn-se/sajn-wordpress/releases/latest).
+2. In WordPress, go to **Plugins → Add New → Upload Plugin**, upload the zip, and activate the plugin.
+3. In sajn, go to **Settings → Organization → Developer → API keys** and create a key.
+4. In WordPress, go to **sajn → Settings** and paste the key.
+5. Go to **sajn → Connections**, click **Add connection**, and choose a form and a sajn template. Click **Continue**.
+6. Fill in the template's parties and fields with form tags, such as `{your-name}`. To send the visitor straight to signing, choose a party under **Open signing**.
+7. Select **Send a document on every submission** and click **Save connection**.
 
-On submit, the plugin makes one `POST /api/v1/documents` call with `templateId`, `parties` (by `templatePartyId`), `fieldValues`, and `send: true`. To open signing, it reads the party's `signingUrl` from `GET /api/v1/documents/{id}/parties/{partyId}`. A failed call never blocks the form: the form shows its own confirmation and **sajn → Log** records the error with the API request ID.
+**sajn → Log** lists the last 50 submissions and why any of them failed. A failed call never blocks the form: the form shows its own confirmation.
 
-The plugin pins `Sajn-Version: 2026-10`. It needs a sajn organization on the Team plan or higher, because the public API starts there.
+## How it works
 
-## Run it locally
+On submit, the plugin makes one `POST /api/v1/documents` call with `templateId`, `parties` (by `templatePartyId`), `fieldValues`, and `send: true`. It sends an `Idempotency-Key` built from the connection and the answers, so sajn returns the same document when the same answers arrive again within 24 hours. To open signing, it reads the party's `signingUrl` from `GET /api/v1/documents/{id}/parties/{partyId}`.
 
-You need Docker and the local sajn stack from `sajn-app` (`./dev up app`).
+The keys come from FORM subfields and boxes placed on a PDF in the template. Keys the lookup misses go in **Other keys**, one `key = {tag}` per line.
+
+The plugin pins `Sajn-Version: 2026-10`. A site can point it at another sajn with `define( 'SAJN_BASE_URL', '…' )` in `wp-config.php`.
+
+## Develop
+
+The plugin lives in `plugin/sajn/`. The rest of the repo runs it in Docker against a local sajn (`./dev up app` in `sajn-app`).
 
 1. Start WordPress on http://localhost:8088. The plugin folder is mounted into the container, so edits apply on reload.
 
 	```bash
 	docker compose up -d
-	bin/wp core install --url=http://localhost:8088 --title="sajn WP dev" --admin_user=admin --admin_password=admin --admin_email=andreas@sajn.se --skip-email
+	bin/wp core install --url=http://localhost:8088 --title="sajn WP dev" --admin_user=admin --admin_password=admin --admin_email=admin@example.com --skip-email
 	bin/wp plugin install contact-form-7 wpforms-lite --activate
 	bin/wp plugin activate sajn
 	bin/wp option update permalink_structure '/%postname%/'
@@ -36,20 +46,38 @@ You need Docker and the local sajn stack from `sajn-app` (`./dev up app`).
 
 3. Create an API key in your local sajn and save it to `~/.sajn-wp-dev/api-key` (mode 600). Create a template named `WP Offertförfrågan` with one party and the FORM keys `kund-namn`, `kund-telefon`, and `meddelande`.
 
-4. Run the smoke test. It saves the key and both connections through the admin screens, submits both forms, and checks that each one lands on the sajn signing page. Screenshots go to `screenshots/`.
+4. Run the smoke test. It saves the key and both connections through the admin screens, submits both forms twice, and checks that each lands on the sajn signing page and that a resubmission returns the same document. Screenshots go to `screenshots/`.
 
 	```bash
 	pnpm install
-	pnpm smoke
+	SIGNER_EMAIL=you@example.com pnpm smoke
 	```
 
-WordPress reaches sajn at `http://host.docker.internal:3000`. To point it somewhere else, set `SAJN_BASE_URL` before `docker compose up`. In production the plugin defaults to `https://app.sajn.se`, and a site can override it with `define( 'SAJN_BASE_URL', '…' )` in `wp-config.php`.
+WordPress reaches sajn at `http://host.docker.internal:3000`. Set `SAJN_BASE_URL` before `docker compose up` to point it somewhere else.
 
-## Translations
+Gravity Forms is paid, so the smoke test doesn't cover it.
 
-Source strings are English. `plugin/sajn/languages/` holds the template and the Swedish translation. After you change a string, regenerate the template and the compiled file:
+### Check and release
+
+Run WordPress's Plugin Check before a release. It should report no errors:
+
+```bash
+bin/wp plugin install plugin-check --activate
+bin/wp plugin check sajn
+```
+
+Build the zip from `plugin/` so it unpacks to a `sajn/` folder:
+
+```bash
+(cd plugin && zip -rq ../sajn.zip sajn -x '*.DS_Store')
+```
+
+### Translations
+
+Source strings are English. `plugin/sajn/languages/` holds the template and the Swedish translation. After you change a string, update both and compile:
 
 ```bash
 bin/wp i18n make-pot wp-content/plugins/sajn wp-content/plugins/sajn/languages/sajn.pot --domain=sajn
+bin/wp i18n update-po wp-content/plugins/sajn/languages/sajn.pot wp-content/plugins/sajn/languages/sajn-sv_SE.po
 bin/wp i18n make-mo wp-content/plugins/sajn/languages
 ```

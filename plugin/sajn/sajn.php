@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:       sajn
+ * Plugin Name:       sajn E-Signature
  * Plugin URI:        https://sajn.se
- * Description:       Send a sajn document for signing when a visitor submits a form. Works with Contact Form 7 and WPForms.
+ * Description:       Send a sajn document for signing when a visitor submits a form. Works with Contact Form 7, WPForms, and Gravity Forms.
  * Version:           0.1.0
  * Requires at least: 6.2
  * Requires PHP:      7.4
@@ -26,6 +26,7 @@ require_once SAJN_PLUGIN_DIR . 'includes/class-sajn-connections.php';
 require_once SAJN_PLUGIN_DIR . 'includes/class-sajn-sources.php';
 require_once SAJN_PLUGIN_DIR . 'includes/sources/class-sajn-source-cf7.php';
 require_once SAJN_PLUGIN_DIR . 'includes/sources/class-sajn-source-wpforms.php';
+require_once SAJN_PLUGIN_DIR . 'includes/sources/class-sajn-source-gravity-forms.php';
 require_once SAJN_PLUGIN_DIR . 'includes/class-sajn-admin.php';
 
 add_action(
@@ -35,6 +36,7 @@ add_action(
 
 		Sajn_Sources::register( new Sajn_Source_CF7() );
 		Sajn_Sources::register( new Sajn_Source_WPForms() );
+		Sajn_Sources::register( new Sajn_Source_Gravity_Forms() );
 
 		if ( is_admin() ) {
 			Sajn_Admin::init();

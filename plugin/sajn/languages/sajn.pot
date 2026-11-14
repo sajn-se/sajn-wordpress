@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-14T23:27:14+00:00\n"
+"POT-Creation-Date: 2026-11-14T23:35:40+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sajn\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #. Description of the plugin
 #: sajn.php
-msgid "Send a sajn document for signing when a visitor submits a form. Works with Contact Form 7 and WPForms."
+msgid "Send a sajn document for signing when a visitor submits a form. Works with Contact Form 7, WPForms, and Gravity Forms."
 msgstr ""
 
 #: includes/class-sajn-admin.php:24
@@ -103,7 +103,7 @@ msgstr ""
 
 #: includes/class-sajn-admin.php:128
 #: includes/class-sajn-admin.php:190
-#: includes/class-sajn-admin.php:306
+#: includes/class-sajn-admin.php:302
 msgid "Name"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgid "Template"
 msgstr ""
 
 #: includes/class-sajn-admin.php:131
-#: includes/class-sajn-admin.php:224
+#: includes/class-sajn-admin.php:370
 msgid "Status"
 msgstr ""
 
@@ -160,7 +160,7 @@ msgid "Could not load templates from sajn: %s"
 msgstr ""
 
 #: includes/class-sajn-admin.php:180
-msgid "Install and activate Contact Form 7 or WPForms to connect a form."
+msgid "Install and activate Contact Form 7, WPForms, or Gravity Forms to connect a form."
 msgstr ""
 
 #: includes/class-sajn-admin.php:197
@@ -179,211 +179,211 @@ msgstr ""
 msgid "Save to choose how the form fills in the template."
 msgstr ""
 
-#: includes/class-sajn-admin.php:225
-msgid "Send a document on every submission"
-msgstr ""
-
-#: includes/class-sajn-admin.php:233
+#: includes/class-sajn-admin.php:229
 msgid "Save connection"
 msgstr ""
 
-#: includes/class-sajn-admin.php:233
+#: includes/class-sajn-admin.php:229
 msgid "Continue"
 msgstr ""
 
 #. translators: %s: error message
-#: includes/class-sajn-admin.php:248
+#: includes/class-sajn-admin.php:244
 #, php-format
 msgid "Could not load the template from sajn: %s"
 msgstr ""
 
-#: includes/class-sajn-admin.php:254
-#: includes/class-sajn-admin.php:310
+#: includes/class-sajn-admin.php:250
+#: includes/class-sajn-admin.php:306
 msgid "Email"
 msgstr ""
 
-#: includes/class-sajn-admin.php:255
+#: includes/class-sajn-admin.php:251
 msgid "SMS"
 msgstr ""
 
-#: includes/class-sajn-admin.php:256
+#: includes/class-sajn-admin.php:252
 msgid "Email and SMS"
 msgstr ""
 
-#: includes/class-sajn-admin.php:257
+#: includes/class-sajn-admin.php:253
 msgid "No invitation"
 msgstr ""
 
-#: includes/class-sajn-admin.php:260
+#: includes/class-sajn-admin.php:256
 msgid "Form fields"
 msgstr ""
 
-#: includes/class-sajn-admin.php:261
+#: includes/class-sajn-admin.php:257
 msgid "Use a form field in any box below by writing its tag. You can mix tags and text, such as \"Agreement for {your-name}\"."
 msgstr ""
 
-#: includes/class-sajn-admin.php:263
+#: includes/class-sajn-admin.php:259
 msgid "Tag"
 msgstr ""
 
-#: includes/class-sajn-admin.php:263
+#: includes/class-sajn-admin.php:259
 msgid "Field"
 msgstr ""
 
-#: includes/class-sajn-admin.php:271
-#: includes/class-sajn-admin.php:445
+#: includes/class-sajn-admin.php:267
+#: includes/class-sajn-admin.php:447
 msgid "Document"
 msgstr ""
 
-#: includes/class-sajn-admin.php:274
+#: includes/class-sajn-admin.php:270
 msgid "Document name"
 msgstr ""
 
-#: includes/class-sajn-admin.php:277
+#: includes/class-sajn-admin.php:273
 msgid "Leave empty to use the template name."
 msgstr ""
 
-#: includes/class-sajn-admin.php:282
+#: includes/class-sajn-admin.php:278
 msgid "Parties"
 msgstr ""
 
-#: includes/class-sajn-admin.php:284
+#: includes/class-sajn-admin.php:280
 msgid "The template has no parties. Add them to the template in sajn."
 msgstr ""
 
-#: includes/class-sajn-admin.php:286
+#: includes/class-sajn-admin.php:282
 msgid "A party you leave empty keeps the details saved in the template."
 msgstr ""
 
-#: includes/class-sajn-admin.php:314
+#: includes/class-sajn-admin.php:310
 msgid "Phone"
 msgstr ""
 
-#: includes/class-sajn-admin.php:316
+#: includes/class-sajn-admin.php:312
 msgid "Needed for SMS, with country code, such as +46701234567."
 msgstr ""
 
-#: includes/class-sajn-admin.php:319
+#: includes/class-sajn-admin.php:315
 msgid "Invitation"
 msgstr ""
 
-#: includes/class-sajn-admin.php:329
+#: includes/class-sajn-admin.php:325
 msgid "Signature method"
 msgstr ""
 
-#: includes/class-sajn-admin.php:332
+#: includes/class-sajn-admin.php:328
 msgid "As in the template"
 msgstr ""
 
-#: includes/class-sajn-admin.php:342
+#: includes/class-sajn-admin.php:338
 msgid "Fields to fill in"
 msgstr ""
 
-#: includes/class-sajn-admin.php:351
+#: includes/class-sajn-admin.php:347
 msgid "Other keys"
 msgstr ""
 
-#: includes/class-sajn-admin.php:354
+#: includes/class-sajn-admin.php:350
 msgid "One key per line, such as \"org-number = {org-nr}\". Use this for keys the list above doesn't show, such as form fields in an uploaded PDF."
 msgstr ""
 
-#: includes/class-sajn-admin.php:359
+#: includes/class-sajn-admin.php:355
 msgid "After the submission"
 msgstr ""
 
-#: includes/class-sajn-admin.php:362
+#: includes/class-sajn-admin.php:358
 msgid "Open signing"
 msgstr ""
 
-#: includes/class-sajn-admin.php:365
+#: includes/class-sajn-admin.php:361
 msgid "No, show the form's own confirmation"
 msgstr ""
 
 #. translators: %s: party name
-#: includes/class-sajn-admin.php:367
+#: includes/class-sajn-admin.php:363
 #, php-format
 msgid "Yes, for %s"
 msgstr ""
 
-#: includes/class-sajn-admin.php:370
+#: includes/class-sajn-admin.php:366
 msgid "Sends the visitor straight to the document to sign it. Choose the party who fills in the form."
 msgstr ""
 
-#: includes/class-sajn-admin.php:436
+#: includes/class-sajn-admin.php:371
+msgid "Send a document on every submission"
+msgstr ""
+
+#: includes/class-sajn-admin.php:438
 msgid "sajn log"
 msgstr ""
 
-#: includes/class-sajn-admin.php:437
+#: includes/class-sajn-admin.php:439
 msgid "The last 50 submissions that a connection handled."
 msgstr ""
 
-#: includes/class-sajn-admin.php:441
+#: includes/class-sajn-admin.php:443
 msgid "Time"
 msgstr ""
 
-#: includes/class-sajn-admin.php:442
+#: includes/class-sajn-admin.php:444
 msgid "Connection"
 msgstr ""
 
-#: includes/class-sajn-admin.php:443
+#: includes/class-sajn-admin.php:445
 msgid "Result"
 msgstr ""
 
-#: includes/class-sajn-admin.php:444
+#: includes/class-sajn-admin.php:446
 msgid "Message"
 msgstr ""
 
-#: includes/class-sajn-admin.php:450
+#: includes/class-sajn-admin.php:452
 msgid "Nothing yet."
 msgstr ""
 
-#: includes/class-sajn-admin.php:456
+#: includes/class-sajn-admin.php:458
 msgid "Sent"
 msgstr ""
 
-#: includes/class-sajn-admin.php:456
+#: includes/class-sajn-admin.php:458
 msgid "Failed"
 msgstr ""
 
-#: includes/class-sajn-admin.php:494
+#: includes/class-sajn-admin.php:496
 msgid "(form plugin inactive)"
 msgstr ""
 
-#: includes/class-sajn-admin.php:497
+#: includes/class-sajn-admin.php:499
 msgid "(deleted form)"
 msgstr ""
 
-#: includes/class-sajn-admin.php:502
+#: includes/class-sajn-admin.php:504
 msgid "signer"
 msgstr ""
 
-#: includes/class-sajn-admin.php:503
+#: includes/class-sajn-admin.php:505
 msgid "reviewer"
 msgstr ""
 
-#: includes/class-sajn-admin.php:504
+#: includes/class-sajn-admin.php:506
 msgid "organizer"
 msgstr ""
 
 #. translators: %s: URL of the settings page
-#: includes/class-sajn-admin.php:516
+#: includes/class-sajn-admin.php:518
 #, php-format
 msgid "Add your sajn API key under <a href=\"%s\">sajn → Settings</a> first."
 msgstr ""
 
-#: includes/class-sajn-admin.php:527
+#: includes/class-sajn-admin.php:529
 msgid "Settings saved."
 msgstr ""
 
-#: includes/class-sajn-admin.php:528
+#: includes/class-sajn-admin.php:530
 msgid "Connection saved."
 msgstr ""
 
-#: includes/class-sajn-admin.php:529
+#: includes/class-sajn-admin.php:531
 msgid "Connection deleted."
 msgstr ""
 
-#: includes/class-sajn-admin.php:538
+#: includes/class-sajn-admin.php:540
 msgid "You are not allowed to change sajn settings."
 msgstr ""
 
@@ -392,15 +392,15 @@ msgid "No sajn API key is saved."
 msgstr ""
 
 #. translators: %d: HTTP status code
-#: includes/class-sajn-api.php:189
+#: includes/class-sajn-api.php:193
 #, php-format
 msgid "sajn returned HTTP %d."
 msgstr ""
 
-#: includes/class-sajn-connections.php:191
+#: includes/class-sajn-connections.php:196
 msgid "Document sent for signing."
 msgstr ""
 
-#: includes/class-sajn-connections.php:209
+#: includes/class-sajn-connections.php:214
 msgid "The document was sent, but the party to open signing for has no name, email, or phone in this submission."
 msgstr ""
