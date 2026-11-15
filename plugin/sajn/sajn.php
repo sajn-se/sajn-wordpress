@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       sajn E-Signature
- * Plugin URI:        https://sajn.se
+ * Plugin URI:        https://github.com/sajn-se/sajn-wordpress
  * Description:       Send a sajn document for signing when a visitor submits a form. Works with Contact Form 7, WPForms, and Gravity Forms.
  * Version:           0.1.0
  * Requires at least: 6.2
